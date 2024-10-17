@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .resultados {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperatura</h1>
+
+    <input type="number" id="celsius" placeholder="Celsius">
+    <button onclick="converter()">Converter</button>
+
+    <div class="resultados" id="resultados"></div>
+
+    <script>
+        function converter() {
+            const celsius = parseFloat(document.getElementById('celsius').value);
+            if (isNaN(celsius)) {
+                alert('insira um valor numérico válido!');
+                return;
+            }
+
+            const fahrenheit = (celsius * 9/5) + 32;
+            exibirResultado(celsius, fahrenheit);
+        }
+
+        function exibirResultado(celsius, fahrenheit) {
+            const resultadosDiv = document.getElementById('resultados');
+            const resultado = document.createElement('p');
+            resultado.textContent = `${celsius}°C = ${fahrenheit.toFixed(2)}°F`;
+            resultadosDiv.appendChild(resultado);
+        }
+    </script>
+</body>
+</html>

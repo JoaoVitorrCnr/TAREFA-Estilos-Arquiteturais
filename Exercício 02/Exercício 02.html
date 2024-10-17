@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuários</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        input, button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .mensagem {
+            margin-top: 10px;
+            color: red;
+        }
+        .usuarios {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cadastro de Usuários</h1>
+
+    <form onsubmit="processarCadastro(event)">
+        <input type="text" id="nome" placeholder="Nome" required><br>
+        <input type="number" id="idade" placeholder="Idade" required><br>
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <div class="mensagem" id="mensagem"></div>
+
+    <div class="usuarios" id="listaUsuarios">
+        <h2>Usuários Cadastrados:</h2>
+    </div>
+
+    <script src="Exercício 02.js"></script>
+</body>
+</html>
